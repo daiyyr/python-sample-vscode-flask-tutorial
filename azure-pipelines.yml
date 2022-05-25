@@ -21,10 +21,5 @@ strategy:
 container: $[ variables['containerImage'] ]
 
 steps:
-- script: printenv
 - script: echo ${{ resources.repositories['self'].name }}
-- script: echo ${{ resources.repositories['self'].defaultBranch }}
-- script: echo ${{ resources.repositories['self'].versionInfo.author }}
-- script: echo ${{ job.steps }}
-- script: echo ${{ task.id }}
 
