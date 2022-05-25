@@ -31,11 +31,12 @@ variables:
   isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/main')]
 
 steps:
-- condition: and(succeeded(), eq(variables.isMain, 'true'))
-  script: printenv
-  # - script: echo ${{ resources.repositories['self'].name }}
-  # - script: echo ${{ resources.repositories['self'].defaultBranch }}
-  # - script: echo ${{ resources.repositories['self'].versionInfo.author }}
-  # - script: echo ${{ job.steps }}
-  # - script: echo ${{ task.id }}
+- script: printenv
+  condition: and(succeeded(), eq(variables.isMain, 'true'))
+
+# - script: echo ${{ resources.repositories['self'].name }}
+# - script: echo ${{ resources.repositories['self'].defaultBranch }}
+# - script: echo ${{ resources.repositories['self'].versionInfo.author }}
+# - script: echo ${{ job.steps }}
+# - script: echo ${{ task.id }}
 
