@@ -20,6 +20,18 @@ strategy:
 
 container: $[ variables['containerImage'] ]
 
+resources:
+  repositories:
+    - repository: templates
+      type: git
+      name: azure-devops-templates
+      ref: refs/tags/v1.0
+
 steps:
+- script: printenv
 - script: echo ${{ resources.repositories['self'].name }}
+- script: echo ${{ resources.repositories['self'].defaultBranch }}
+- script: echo ${{ resources.repositories['self'].versionInfo.author }}
+- script: echo ${{ job.steps }}
+- script: echo ${{ task.id }}
 
