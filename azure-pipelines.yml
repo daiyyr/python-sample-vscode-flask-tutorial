@@ -31,8 +31,8 @@ variables:
   isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/main')]
 
 steps:
-  condition: and(succeeded(), eq(variables.isMain, 'true'))
-  - script: printenv
+- condition: and(succeeded(), eq(variables.isMain, 'true'))
+  script: printenv
   # - script: echo ${{ resources.repositories['self'].name }}
   # - script: echo ${{ resources.repositories['self'].defaultBranch }}
   # - script: echo ${{ resources.repositories['self'].versionInfo.author }}
