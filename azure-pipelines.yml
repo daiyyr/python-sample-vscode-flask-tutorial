@@ -20,12 +20,6 @@ strategy:
 
 container: $[ variables['containerImage'] ]
 
-resources:
-  repositories:
-    - repository: templates
-      type: git
-      name: testing
-
 variables:
   isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/main')]
 
