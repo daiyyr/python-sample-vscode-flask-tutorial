@@ -24,7 +24,7 @@ resources:
   repositories:
     - repository: templates
       type: git
-      name: azure-devops-templates
+      name: testing
       ref: refs/tags/v1.0
 
 steps:
