@@ -25,7 +25,6 @@ resources:
     - repository: templates
       type: git
       name: testing
-      ref: refs/tags/v1.0
 
 variables:
   isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/main')]
