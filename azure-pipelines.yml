@@ -27,13 +27,15 @@ resources:
       name: testing
       ref: refs/tags/v1.0
 
+variables:
+  isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/main')]
 
 steps:
-- ${{ if eq(resources.repositories['self'].ref, resources.repositories['self'].defaultBranch) }}:
+  condition: and(succeeded(), eq(variables.isMain, 'true'))
   - script: printenv
-  - script: echo ${{ resources.repositories['self'].name }}
-  - script: echo ${{ resources.repositories['self'].defaultBranch }}
-  - script: echo ${{ resources.repositories['self'].versionInfo.author }}
-  - script: echo ${{ job.steps }}
-  - script: echo ${{ task.id }}
+  # - script: echo ${{ resources.repositories['self'].name }}
+  # - script: echo ${{ resources.repositories['self'].defaultBranch }}
+  # - script: echo ${{ resources.repositories['self'].versionInfo.author }}
+  # - script: echo ${{ job.steps }}
+  # - script: echo ${{ task.id }}
 
