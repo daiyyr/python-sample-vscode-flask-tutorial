@@ -21,7 +21,7 @@ strategy:
 container: $[ variables['containerImage'] ]
 
 variables:
-  isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/main')]
+  isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/master')]
 
 steps:
 - script: printenv
